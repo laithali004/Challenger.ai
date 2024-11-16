@@ -47,49 +47,17 @@ header nav ul li a:hover {
 
 /* Hero Section */
 .hero {
-  position: relative;
-  height: 400px;
-  overflow: hidden;
-}
-
-.hero .slideshow {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-}
-
-.hero .slide {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-position: center;
-  opacity: 0;
-  transition: opacity 1s ease-in-out;
-}
-
-.hero .slide.active {
-  opacity: 1;
-}
-
-.hero-content {
   text-align: center;
   padding: 100px 20px;
-  position: relative;
-  z-index: 1;
+  background: linear-gradient(120deg, #292946, #1e1e2f);
 }
 
-.hero-content h2 {
+.hero h2 {
   font-size: 2.5em;
   margin-bottom: 20px;
 }
 
-.hero-content p {
+.hero p {
   font-size: 1.2em;
   margin-bottom: 30px;
 }
@@ -120,4 +88,53 @@ header nav ul li a:hover {
 
 .search-bar button:hover {
   background: #e5563d;
+}
+
+/* Section Styles */
+section {
+  padding: 50px 20px;
+}
+
+section h3 {
+  font-size: 2em;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+#features {
+  background: #222236;
+}
+
+.features-grid {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.feature {
+  background: #292946;
+  padding: 20px;
+  width: 250px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.feature h4 {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+.feature p {
+  font-size: 1em;
+  color: #dddddd;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 10px;
+  background: #1e1e2f;
+  font-size: 0.9em;
 }
