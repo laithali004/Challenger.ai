@@ -17,7 +17,7 @@ completion = client.chat.completions.create(
             f"""
                 I am someone who is WAYYY too good at {game}. I want a challenging way to play the game so that I can have fun again.
                 What are some challenges I could do? Pick ONE that you think would be really hard. Keep it to 10 words.
-                If it is a game that involves shooting, do not suggest not using a weapon.
+                Keep the challenge reasonable to the type of game and the game itself. Have it be somewhat possible.
             """
         }
     ]
