@@ -82,7 +82,27 @@ document.addEventListener("DOMContentLoaded", () => {
     gameInfoSection.style.display = "none";
     errorInfoSection.style.display = "block";
   }
-
+  
+    // Handle "Generate Challenge" Button
+    const generateButton = document.getElementById("generate-button");
+    if (generateButton) {
+      generateButton.addEventListener("click", async () => {
+        const challengeOutput = document.getElementById("challenge-output");
+        challengeOutput.innerText = "Generating challenge...";
+  
+        try {
+          const response = await fetch("http://localhost:5000/generate-challenge", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ game }),
+          });
+          const data = await response.json();
+          challengeOutput.innerText = data.challenge || "No challenge found.";
+        } catch (error) {
+          challengeOutput.innerText = "Error generating challenge. Please try again.";
+        }
+      });
+    }
   // Handle "Back to Home" Button
   const backHomeButton = document.getElementById("back-home-button");
   if (backHomeButton) {
