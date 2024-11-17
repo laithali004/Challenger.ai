@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Game Challenge</title>
+  <link rel="stylesheet" href="styles-game.css">
+</head>
+<body>
+  <header>
+    <h1>Challenger.ai</h1>
+    <button id="back-home-button" class="btn">Home</button>
+  </header>
+
+  <main>
+    <!-- Game Information Section -->
+    <section class="game-info" id="game-info-section" style="display: none;">
+      <h2 id="game-title"></h2>
+      <img id="game-image" src="" alt="Game Image" class="game-image" />
+      <p id="game-description"></p>
+      <button id="generate-button" class="btn generate-btn">Generate Challenge</button>
+      <div id="challenge-output" class="output"></div>
+    </section>
+
+    <!-- Error Information Section -->
+    <section class="error-info" id="error-info-section" style="display: none;">
+      <h2>Game Not Found</h2>
+      <img src="placeholder-image.jpg" alt="Game Image" class="game-image" />
+      <p>We couldn't find details about this game.</p>
+    </section>
+  </main>
+
+  <script src="scripts.js"></script>
+</body>
+</html>

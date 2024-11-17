@@ -1,0 +1,138 @@
+/* General Styles for Game Page */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #1e1e2f;
+    color: #ffffff;
+  }
+  
+  .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  /* Header */
+  header {
+    background: linear-gradient(90deg, #292946, #1e1e2f);
+    padding: 15px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+  }
+  
+  header h1 {
+    color: #ff6347;
+    font-size: 2.5em;
+    margin-left: 20px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+  }
+  
+  header .btn {
+    background-color: #ff6347;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+    margin-right: 20px;
+  }
+  
+  header .btn:hover {
+    background-color: #ff856c;
+    transform: scale(1.05); /* Slight zoom effect */
+  }
+  
+  /* Game Info Section */
+  .game-info {
+    background: linear-gradient(120deg, #292946, #1e1e2f);
+    padding: 40px 20px;
+    margin: 20px auto;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.4);
+    max-width: 800px;
+  }
+  
+  .game-info h3 {
+    font-size: 2rem;
+    color: #ff6347;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+  }
+  
+  .game-info p {
+    font-size: 1.1rem;
+    color: #cfcfe6;
+    line-height: 1.8;
+    margin: 0 auto;
+  }
+  
+  .game-image {
+    display: block;
+    max-width: 90%;
+    height: auto;
+    margin: 20px auto;
+    border-radius: 15px;
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.5);
+  }
+  
+  /* Generate Button */
+  #generate-button {
+    padding: 15px 30px;
+    background: linear-gradient(90deg, #ff6347, #ff856c);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+  }
+  
+  #generate-button:hover {
+    background: linear-gradient(90deg, #ff856c, #ff6347);
+    transform: translateY(-3px); /* Adds a floating effect */
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.5);
+  }
+  
+  /* Challenge Output */
+  #challenge-output {
+    margin-top: 20px;
+    font-size: 1.3rem;
+    color: #ff856c;
+    font-weight: bold;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  }
+  
+  /* Error Info Section */
+  .error-info {
+    padding: 40px 20px;
+    margin: 20px auto;
+    background: linear-gradient(120deg, #252540, #1e1e2f);
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.4);
+  }
+  
+  .error-info img {
+    max-width: 150px;
+    margin: 20px 0;
+    border-radius: 50%;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+  }
+  
+  .error-info h3 {
+    color: #ff6347;
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+  }
+  
+  .error-info p {
+    font-size: 1.1rem;
+    color: #cfcfe6;
+  }
+  
