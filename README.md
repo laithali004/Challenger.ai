@@ -1,2 +1,1 @@
 # Challenger.ai
-dandyhacks project
