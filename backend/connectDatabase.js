@@ -1,6 +1,6 @@
 const { MongoClient } = require('mongodb');
 
-const uri = "mongodb+srv://laithali004:2012Kareem@cluster0.ozxjl.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+const uri = "mongodb+srv://laithali004:MONGO@cluster0.ozxjl.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
 
 async function getGameByName(gameName) {
   const client = new MongoClient(uri);

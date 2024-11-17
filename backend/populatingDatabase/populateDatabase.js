@@ -2,7 +2,7 @@ const axios = require('axios');
 const { MongoClient } = require('mongodb');
 
 // MongoDB connection string (replace with your own)
-const uri = "mongodb+srv://laithali004:2012Kareem@cluster0.ozxjl.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+const uri = "mongodb+srv://laithali004:MONGO@cluster0.ozxjl.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
 
 // RAWG API Key and Endpoint
 const apiKey = "1754861a0ab14646861fc73fecd8db9d"; // Replace with your actual API key
