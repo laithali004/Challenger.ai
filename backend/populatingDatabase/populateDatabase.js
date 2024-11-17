@@ -2,37 +2,61 @@ const axios = require('axios');
 const { MongoClient } = require('mongodb');
 
 // MongoDB connection string (replace with your own)
-const uri = "mongodb+srv://lavni:f24ZciII2Wf882nM@challengerai.dnyxi.mongodb.net/?retryWrites=true&w=majority&appName=challengerai+srv://<username>:<password>@cluster0.mongodb.net/<dbname>?retryWrites=true&w=majority";
+const uri = "mongodb+srv://laithali004:2012Kareem@cluster0.ozxjl.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
 
-// The public API endpoint for games (replace this with the actual API)
-const apiUrl = "";  // Replace with the actual API URL
+// RAWG API Key and Endpoint
+const apiKey = "1754861a0ab14646861fc73fecd8db9d"; // Replace with your actual API key
+const apiUrl = `https://api.rawg.io/api/games?key=${apiKey}`;
 
 // Function to fetch data and insert into MongoDB
 async function fetchAndInsertGames() {
-    try {
-        // Fetch data from the public API
-        const response = await axios.get(apiUrl); /////////update to get data correctly
-        const games = response.data;  // Assume the API returns an array of games
+  const client = new MongoClient(uri);
+  try {
+    // Fetch data from RAWG API
+    const response = await axios.get(apiUrl);
+    const games = response.data.results; // Assuming 'results' contains the array of games
 
-        // Connect to MongoDB
-        const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
-        await client.connect();
-        console.log('Connected to MongoDB');
+    // Connect to MongoDB
+    await client.connect();
+    console.log('Connected to MongoDB');
 
-        // Get the database and collection
-        const db = client.db('<dbname>');  // Replace with your database name
-        const collection = db.collection('games');
+    // Get the database and collection
+    const db = client.db('gameDB'); // Replace 'gameDB' with your database name
+    const collection = db.collection('games');
 
-        // Insert data into the "games" collection
-        const result = await collection.insertMany(games);
-        console.log(`${result.insertedCount} games inserted`);
-
-        // Close the connection
-        await client.close();
-    } catch (error) {
-        console.error('Error fetching or inserting data:', error);
-    }
+    // Insert data into the "games" collection
+    const formattedGames = games.map(game => ({
+      name: game.name,
+      genre: game.genres ? game.genres.map(g => g.name).join(", ") : "Unknown",
+      description: game.description || "No description available",
+      image: game.background_image || "No image available",
+    }));
+    
+    const result = await collection.insertMany(formattedGames);
+    console.log(`${result.insertedCount} games inserted`);
+  } catch (error) {
+    console.error('Error fetching or inserting data:', error);
+  } finally {
+    // Close the MongoDB connection
+    await client.close();
+  }
 }
 
-// Call the function to fetch data and insert into MongoDB
-fetchAndInsertGames();
+// Test MongoDB connection
+async function testConnection() {
+  const client = new MongoClient(uri);
+  try {
+    await client.connect();
+    console.log("Connected to MongoDB!");
+  } catch (error) {
+    console.error("Connection failed:", error);
+  } finally {
+    await client.close();
+  }
+}
+
+// Call the testConnection function and then populate the database
+(async () => {
+  await testConnection();
+  await fetchAndInsertGames();
+})();
