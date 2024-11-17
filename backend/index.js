@@ -65,9 +65,10 @@ app.post("/generate-challenge", async (req, res) => {
         {
           role: "user",
           content: `
-            I am someone who is WAYYY too good at ${gameDetails.name}. It is a ${gameDetails.genre} game.
-            I want a challenging way to play so that I can have fun again.
-            What are some challenges I could do? Pick ONE that you think would be really hard. Keep it to 10 words.
+            I am someone who is always up for a challenge, currently I would like an interesting challenge for ${gameDetails.name}. It is a ${gameDetails.genre} game.
+            I want a challenging way to play so that I can have fun or a difficult interesting challenge. What are some challenges I could do? 
+            Make sure it is reasonable based on which game it is. Also try not to be too repetitive when regenerating a challenge.
+            Pick ONE that you think would fit my needs. keep it to 20 words.
           `,
         },
       ],
