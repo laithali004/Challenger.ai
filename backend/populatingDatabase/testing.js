@@ -9,11 +9,8 @@ async function run() {
     const database = client.db("gameDB");
     const collection = database.collection("games");
 
-    //const fs = require('fs');
-    //const image = fs.readFileSync('path_to_image.jpg').toString('base64');
-
     // Example: Insert a game
-    await collection.insertOne({ title: "Game Name", genre: "Adventure", platform: "Platforms"});//add image after
+    await collection.insertOne({ title: "Game Name", genre: "Adventure", platform: "Platforms"});
     console.log("Game inserted successfully!");
   } finally {
     await client.close();
